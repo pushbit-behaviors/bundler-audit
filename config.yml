@@ -1,0 +1,29 @@
+kind: bundler-audit
+name: Bundler Audit
+description: Runs on every commit and ensures you're not falling prey to known security vulnerabilities.
+discovers: security vulnerabilty
+checkout: patch
+author: 
+  name: Luke Roberts
+  email: awsmsrc@gmail.com
+repository:
+  type: git
+  url: https://github.com/pushbit-behaviors/bundler-update
+tone: negative
+active: false
+tags:
+  - Ruby
+files:
+  - Gemfile
+  - Gemfile.lock
+triggers:
+  - task_completed_unbox
+  - pull_request_opened
+  - cron
+actions:
+  - issue
+keywords:
+  - gems
+  - dependencies
+  - bundler
+  - security

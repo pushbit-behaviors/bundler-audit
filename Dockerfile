@@ -26,5 +26,4 @@ RUN touch Gemfile
 ADD ./execute.sh ./execute.sh
 ADD ./app ./app
 
-
 CMD ./execute.sh
