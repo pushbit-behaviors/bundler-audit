@@ -1,0 +1,6 @@
+<% issues.each do |issue| %>
+> <%= issue[:url] %>
+> <%= issue[:solution] %>
+
+<%= truncate Sanitize.fragment(issue[:description]), 600 %>
+<% end %>
