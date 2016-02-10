@@ -10,7 +10,7 @@ require_relative './bundler-audit/lib/bundler/audit/version'
 
 def scan
   results = []
-  Bundler::Audit::Scanner.new(File.expand_path "../target").scan(:ignore => []) do |result|
+  Bundler::Audit::Scanner.new(File.expand_path "../code").scan(:ignore => []) do |result|
     if result.class == Bundler::Audit::Scanner::UnpatchedGem
       results << result
     end
