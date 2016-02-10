@@ -14,7 +14,7 @@ RUN apt-get install -y libsqlite3-dev
 RUN apt-get install -y libxslt-dev 
 RUN apt-get install -y libxml2-dev 
 
-RUN gem install bundler-audit
+RUN gem install bundler
 RUN gem install tilt
 RUN gem install faraday
 RUN gem install sanitize
@@ -24,4 +24,4 @@ RUN touch Gemfile
 ADD ./execute.sh ./execute.sh
 ADD ./app ./app
 
-CMD ['./execute.sh']
+CMD ["./execute.sh"]
