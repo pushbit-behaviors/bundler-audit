@@ -14,8 +14,6 @@ RUN apt-get install -y libsqlite3-dev
 RUN apt-get install -y libxslt-dev 
 RUN apt-get install -y libxml2-dev 
 
-RUN wget -O - https://github.com/github/hub/releases/download/v2.2.2/hub-linux-amd64-2.2.2.tgz | tar xzf - --strip-components=1 -C "/usr"
-
 RUN gem install bundler-audit
 RUN gem install tilt
 RUN gem install faraday
@@ -26,4 +24,4 @@ RUN touch Gemfile
 ADD ./execute.sh ./execute.sh
 ADD ./app ./app
 
-CMD ./execute.sh
+CMD ['./execute.sh']
